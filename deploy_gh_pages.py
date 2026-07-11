@@ -27,8 +27,8 @@ def deploy():
     # 3. Recursively replace paths in HTML, JS, CSS files for GitHub Pages subdirectory compatibility
     base_prefix = "/pixo-clone"
     replacements = [
-        ('"/scraped-assets/', f'"{base_prefix}/scraped-assets/'),
-        ('\'/scraped-assets/', f'\'{base_prefix}/scraped-assets/'),
+        ('"/scraped-assets/pixo.video/', f'"{base_prefix}/'),
+        ('\'/scraped-assets/pixo.video/', f'\'{base_prefix}/'),
         ('"/scraped-next/', f'"{base_prefix}/scraped-next/'),
         ('\'/scraped-next/', f'\'{base_prefix}/scraped-next/'),
         ('"/images/', f'"{base_prefix}/images/'),
@@ -42,7 +42,7 @@ def deploy():
         ('"/icon@d266dcc34ef99e73', f'"{base_prefix}/icon@d266dcc34ef99e73'),
         ('\'/icon@d266dcc34ef99e73', f'\'{base_prefix}/icon@d266dcc34ef99e73'),
         # CSS url bindings
-        ('url(/scraped-assets/', f'url({base_prefix}/scraped-assets/'),
+        ('url(/scraped-assets/pixo.video/', f'url({base_prefix}/'),
         ('url(/images/', f'url({base_prefix}/images/'),
         ('url(/videos/', f'url({base_prefix}/videos/'),
         # Interactivity links and routing
