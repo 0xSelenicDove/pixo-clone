@@ -2786,7 +2786,10 @@
         const testId = card.getAttribute('data-testid');
         const projectId = testId.replace('project-card-', '');
         if (projectId) {
-          window.location.href = `/org-9cbd03fa/projects/${projectId}`;
+          const isGhPages = window.location.pathname.startsWith('/pixo-clone');
+          const basePrefix = isGhPages ? '/pixo-clone' : '';
+          const ext = isGhPages ? '.html' : '';
+          window.location.href = `${basePrefix}/org-9cbd03fa/projects/${projectId}${ext}`;
         }
       });
 

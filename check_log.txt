@@ -1,0 +1,9 @@
+Total occurrences of '})();': 1
+Match 0 at position 137517:
+ContentLoaded', setupProjectCardInteractivity);
+  } else {
+    setupProjectCardInteractivity();
+  }
+})();
+
+========================================

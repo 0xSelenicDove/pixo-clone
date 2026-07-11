@@ -1,0 +1,13 @@
+Missing file: /scraped-next/static/chunks/593c515e612b2798.css
+Missing file: /scraped-next/static/chunks/8fbdf37b65524b90.css
+Missing file: /scraped-next/static/chunks/0efcae7f1cc97b30.js
+Missing file: /scraped-next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2
+Downloading https://pixo.video/_next/static/chunks/593c515e612b2798.css to /Users/hutao/github/pixo-clone/public/scraped-next/static/chunks/593c515e612b2798.css...
+Failed to download /scraped-next/static/chunks/593c515e612b2798.css: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+Downloading https://pixo.video/_next/static/chunks/8fbdf37b65524b90.css to /Users/hutao/github/pixo-clone/public/scraped-next/static/chunks/8fbdf37b65524b90.css...
+Failed to download /scraped-next/static/chunks/8fbdf37b65524b90.css: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+Downloading https://pixo.video/_next/static/chunks/0efcae7f1cc97b30.js to /Users/hutao/github/pixo-clone/public/scraped-next/static/chunks/0efcae7f1cc97b30.js...
+Failed to download /scraped-next/static/chunks/0efcae7f1cc97b30.js: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+Downloading https://pixo.video/_next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2 to /Users/hutao/github/pixo-clone/public/scraped-next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2...
+Failed to download /scraped-next/static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1081)>
+Download complete. Total missing: 4, downloaded: 0
