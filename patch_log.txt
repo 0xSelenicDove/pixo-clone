@@ -1,0 +1,40 @@
+File size: 135643 chars
+Found 3 matches for 'initializeInteractivity'
+Match 0 at position 109357:
+, 350);
+  };
+
+  // ==========================================
+  // ATTACH CORE EVENT BINDINGS
+  // ==========================================
+  const initializeInteractivity = () => {
+    injectStyles();
+    updateCreditsDisplay();
+    attachDropdowns();
+    renderProjectsGrid();
+
+    // 1. Sidebar Nav "New Project" + Das
+----------------------------------------
+Match 1 at position 135565:
+urrentPromptMode === 'model');
+  };
+
+  // Run on startup
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeInteractivity);
+  } else {
+    initializeInteractivity();
+  }
+})();
+
+----------------------------------------
+Match 2 at position 135606:
+ Run on startup
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeInteractivity);
+  } else {
+    initializeInteractivity();
+  }
+})();
+
+----------------------------------------
