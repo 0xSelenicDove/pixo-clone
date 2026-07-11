@@ -73,6 +73,7 @@
   let activeModelGenerateAudio = true;
   let activeModelType = 'Video';
   let activeModelSelected = 'Seedance 2.0 Fast';
+  let selectedAgent = 'Seedance2 Director';
   let agentIconSvg = null;
 
   const updateModelSettingsTriggerDisplay = (settingsBtn) => {
@@ -1397,7 +1398,7 @@
     const activeLabel = anchorBtn.textContent.trim();
     popover.querySelectorAll('.theirs-opt').forEach(card => {
       const cardVal = card.getAttribute('data-val');
-      if (activeLabel.includes(cardVal)) {
+      if (activeLabel.includes(cardVal) || selectedAgent === cardVal) {
         card.classList.add('active');
         card.style.borderColor = '#84cc16';
         card.style.background = '#f1f8e9';
@@ -1405,6 +1406,8 @@
 
       card.addEventListener('click', (ev) => {
         ev.stopPropagation();
+        
+        selectedAgent = cardVal;
         
         // Update Trigger Display
         const svg = anchorBtn.querySelector('svg');
