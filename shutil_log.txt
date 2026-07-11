@@ -1,0 +1,21 @@
+Line 2: import shutil
+Line 7: source_dir = os.path.join(repo_path, "public/scraped-assets/pixo.video")
+Line 8: temp_dir = os.path.join(repo_path, "temp_gh_pages")
+Line 12: # 1. Clean old temp_dir if exists
+Line 13: if os.path.exists(temp_dir):
+Line 14: shutil.rmtree(temp_dir)
+Line 15: os.makedirs(temp_dir)
+Line 17: # 2. Copy source files to temp_dir
+Line 18: print(f"Copying assets from {source_dir} to temp directory...")
+Line 21: d = os.path.join(temp_dir, item)
+Line 23: shutil.copytree(s, d)
+Line 25: shutil.copy2(s, d)
+Line 66: for root, dirs, files in os.walk(temp_dir):
+Line 90: # 4. Initialize temporary git repository and force push to origin gh-pages branch
+Line 92: subprocess.run(["git", "init"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+Line 93: subprocess.run(["git", "add", "."], cwd=temp_dir, stdout=subprocess.DEVNULL)
+Line 94: subprocess.run(["git", "commit", "-m", "Deploy static build to gh-pages"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+Line 95: subprocess.run(["git", "remote", "add", "origin", "https://github.com/0xSelenicDove/pixo-clone.git"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+Line 98: res = subprocess.run(["git", "push", "-f", "origin", "main:gh-pages"], cwd=temp_dir)
+Line 100: # 5. Clean up temporary files
+Line 101: shutil.rmtree(temp_dir)

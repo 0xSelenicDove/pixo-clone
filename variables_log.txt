@@ -1,0 +1,214 @@
+--- Around Line 2 ---
+   Line 1: import os
+-> Line 2: import shutil
+   Line 3: import subprocess
+   Line 4: 
+   Line 5: def deploy():
+------------------------------
+--- Around Line 7 ---
+   Line 4: 
+   Line 5: def deploy():
+   Line 6:     repo_path = "/Users/hutao/github/pixo-clone"
+-> Line 7:     source_dir = os.path.join(repo_path, "public/scraped-assets/pixo.video")
+   Line 8:     temp_dir = os.path.join(repo_path, "temp_gh_pages")
+   Line 9:     
+   Line 10:     print("Initiating deployment build process...")
+------------------------------
+--- Around Line 8 ---
+   Line 5: def deploy():
+   Line 6:     repo_path = "/Users/hutao/github/pixo-clone"
+   Line 7:     source_dir = os.path.join(repo_path, "public/scraped-assets/pixo.video")
+-> Line 8:     temp_dir = os.path.join(repo_path, "temp_gh_pages")
+   Line 9:     
+   Line 10:     print("Initiating deployment build process...")
+   Line 11: 
+------------------------------
+--- Around Line 12 ---
+   Line 9:     
+   Line 10:     print("Initiating deployment build process...")
+   Line 11: 
+-> Line 12:     # 1. Clean old temp_dir if exists
+   Line 13:     if os.path.exists(temp_dir):
+   Line 14:         shutil.rmtree(temp_dir)
+   Line 15:     os.makedirs(temp_dir)
+------------------------------
+--- Around Line 13 ---
+   Line 10:     print("Initiating deployment build process...")
+   Line 11: 
+   Line 12:     # 1. Clean old temp_dir if exists
+-> Line 13:     if os.path.exists(temp_dir):
+   Line 14:         shutil.rmtree(temp_dir)
+   Line 15:     os.makedirs(temp_dir)
+   Line 16:     
+------------------------------
+--- Around Line 14 ---
+   Line 11: 
+   Line 12:     # 1. Clean old temp_dir if exists
+   Line 13:     if os.path.exists(temp_dir):
+-> Line 14:         shutil.rmtree(temp_dir)
+   Line 15:     os.makedirs(temp_dir)
+   Line 16:     
+   Line 17:     # 2. Copy source files to temp_dir
+------------------------------
+--- Around Line 15 ---
+   Line 12:     # 1. Clean old temp_dir if exists
+   Line 13:     if os.path.exists(temp_dir):
+   Line 14:         shutil.rmtree(temp_dir)
+-> Line 15:     os.makedirs(temp_dir)
+   Line 16:     
+   Line 17:     # 2. Copy source files to temp_dir
+   Line 18:     print(f"Copying assets from {source_dir} to temp directory...")
+------------------------------
+--- Around Line 17 ---
+   Line 14:         shutil.rmtree(temp_dir)
+   Line 15:     os.makedirs(temp_dir)
+   Line 16:     
+-> Line 17:     # 2. Copy source files to temp_dir
+   Line 18:     print(f"Copying assets from {source_dir} to temp directory...")
+   Line 19:     for item in os.listdir(source_dir):
+   Line 20:         s = os.path.join(source_dir, item)
+------------------------------
+--- Around Line 18 ---
+   Line 15:     os.makedirs(temp_dir)
+   Line 16:     
+   Line 17:     # 2. Copy source files to temp_dir
+-> Line 18:     print(f"Copying assets from {source_dir} to temp directory...")
+   Line 19:     for item in os.listdir(source_dir):
+   Line 20:         s = os.path.join(source_dir, item)
+   Line 21:         d = os.path.join(temp_dir, item)
+------------------------------
+--- Around Line 21 ---
+   Line 18:     print(f"Copying assets from {source_dir} to temp directory...")
+   Line 19:     for item in os.listdir(source_dir):
+   Line 20:         s = os.path.join(source_dir, item)
+-> Line 21:         d = os.path.join(temp_dir, item)
+   Line 22:         if os.path.isdir(s):
+   Line 23:             shutil.copytree(s, d)
+   Line 24:         else:
+------------------------------
+--- Around Line 23 ---
+   Line 20:         s = os.path.join(source_dir, item)
+   Line 21:         d = os.path.join(temp_dir, item)
+   Line 22:         if os.path.isdir(s):
+-> Line 23:             shutil.copytree(s, d)
+   Line 24:         else:
+   Line 25:             shutil.copy2(s, d)
+   Line 26:             
+------------------------------
+--- Around Line 25 ---
+   Line 22:         if os.path.isdir(s):
+   Line 23:             shutil.copytree(s, d)
+   Line 24:         else:
+-> Line 25:             shutil.copy2(s, d)
+   Line 26:             
+   Line 27:     # 3. Recursively replace paths in HTML, JS, CSS files for GitHub Pages subdirectory compatibility
+   Line 28:     base_prefix = "/pixo-clone"
+------------------------------
+--- Around Line 30 ---
+   Line 27:     # 3. Recursively replace paths in HTML, JS, CSS files for GitHub Pages subdirectory compatibility
+   Line 28:     base_prefix = "/pixo-clone"
+   Line 29:     replacements = [
+-> Line 30:         ('"/scraped-assets/pixo.video/', f'"{base_prefix}/'),
+   Line 31:         ('\'/scraped-assets/pixo.video/', f'\'{base_prefix}/'),
+   Line 32:         ('"/scraped-next/', f'"{base_prefix}/scraped-next/'),
+   Line 33:         ('\'/scraped-next/', f'\'{base_prefix}/scraped-next/'),
+------------------------------
+--- Around Line 31 ---
+   Line 28:     base_prefix = "/pixo-clone"
+   Line 29:     replacements = [
+   Line 30:         ('"/scraped-assets/pixo.video/', f'"{base_prefix}/'),
+-> Line 31:         ('\'/scraped-assets/pixo.video/', f'\'{base_prefix}/'),
+   Line 32:         ('"/scraped-next/', f'"{base_prefix}/scraped-next/'),
+   Line 33:         ('\'/scraped-next/', f'\'{base_prefix}/scraped-next/'),
+   Line 34:         ('"/images/', f'"{base_prefix}/images/'),
+------------------------------
+--- Around Line 45 ---
+   Line 42:         ('"/icon@d266dcc34ef99e73', f'"{base_prefix}/icon@d266dcc34ef99e73'),
+   Line 43:         ('\'/icon@d266dcc34ef99e73', f'\'{base_prefix}/icon@d266dcc34ef99e73'),
+   Line 44:         # CSS url bindings
+-> Line 45:         ('url(/scraped-assets/pixo.video/', f'url({base_prefix}/'),
+   Line 46:         ('url(/images/', f'url({base_prefix}/images/'),
+   Line 47:         ('url(/videos/', f'url({base_prefix}/videos/'),
+   Line 48:         # Interactivity links and routing
+------------------------------
+--- Around Line 66 ---
+   Line 63:     
+   Line 64:     print("Normalizing static asset URLs and route links...")
+   Line 65:     count = 0
+-> Line 66:     for root, dirs, files in os.walk(temp_dir):
+   Line 67:         for file in files:
+   Line 68:             if file.endswith(('.html', '.js', '.css')):
+   Line 69:                 file_path = os.path.join(root, file)
+------------------------------
+--- Around Line 90 ---
+   Line 87: 
+   Line 88:     print(f"Patched path prefixes on {count} text files.")
+   Line 89:     
+-> Line 90:     # 4. Initialize temporary git repository and force push to origin gh-pages branch
+   Line 91:     print("Initializing deployment commit...")
+   Line 92:     subprocess.run(["git", "init"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 93:     subprocess.run(["git", "add", "."], cwd=temp_dir, stdout=subprocess.DEVNULL)
+------------------------------
+--- Around Line 92 ---
+   Line 89:     
+   Line 90:     # 4. Initialize temporary git repository and force push to origin gh-pages branch
+   Line 91:     print("Initializing deployment commit...")
+-> Line 92:     subprocess.run(["git", "init"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 93:     subprocess.run(["git", "add", "."], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 94:     subprocess.run(["git", "commit", "-m", "Deploy static build to gh-pages"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 95:     subprocess.run(["git", "remote", "add", "origin", "https://github.com/0xSelenicDove/pixo-clone.git"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+------------------------------
+--- Around Line 93 ---
+   Line 90:     # 4. Initialize temporary git repository and force push to origin gh-pages branch
+   Line 91:     print("Initializing deployment commit...")
+   Line 92:     subprocess.run(["git", "init"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+-> Line 93:     subprocess.run(["git", "add", "."], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 94:     subprocess.run(["git", "commit", "-m", "Deploy static build to gh-pages"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 95:     subprocess.run(["git", "remote", "add", "origin", "https://github.com/0xSelenicDove/pixo-clone.git"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 96:     
+------------------------------
+--- Around Line 94 ---
+   Line 91:     print("Initializing deployment commit...")
+   Line 92:     subprocess.run(["git", "init"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 93:     subprocess.run(["git", "add", "."], cwd=temp_dir, stdout=subprocess.DEVNULL)
+-> Line 94:     subprocess.run(["git", "commit", "-m", "Deploy static build to gh-pages"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 95:     subprocess.run(["git", "remote", "add", "origin", "https://github.com/0xSelenicDove/pixo-clone.git"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 96:     
+   Line 97:     print("Pushing static build to GitHub gh-pages branch...")
+------------------------------
+--- Around Line 95 ---
+   Line 92:     subprocess.run(["git", "init"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 93:     subprocess.run(["git", "add", "."], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 94:     subprocess.run(["git", "commit", "-m", "Deploy static build to gh-pages"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+-> Line 95:     subprocess.run(["git", "remote", "add", "origin", "https://github.com/0xSelenicDove/pixo-clone.git"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 96:     
+   Line 97:     print("Pushing static build to GitHub gh-pages branch...")
+   Line 98:     res = subprocess.run(["git", "push", "-f", "origin", "main:gh-pages"], cwd=temp_dir)
+------------------------------
+--- Around Line 98 ---
+   Line 95:     subprocess.run(["git", "remote", "add", "origin", "https://github.com/0xSelenicDove/pixo-clone.git"], cwd=temp_dir, stdout=subprocess.DEVNULL)
+   Line 96:     
+   Line 97:     print("Pushing static build to GitHub gh-pages branch...")
+-> Line 98:     res = subprocess.run(["git", "push", "-f", "origin", "main:gh-pages"], cwd=temp_dir)
+   Line 99:     
+   Line 100:     # 5. Clean up temporary files
+   Line 101:     shutil.rmtree(temp_dir)
+------------------------------
+--- Around Line 100 ---
+   Line 97:     print("Pushing static build to GitHub gh-pages branch...")
+   Line 98:     res = subprocess.run(["git", "push", "-f", "origin", "main:gh-pages"], cwd=temp_dir)
+   Line 99:     
+-> Line 100:     # 5. Clean up temporary files
+   Line 101:     shutil.rmtree(temp_dir)
+   Line 102:     if res.returncode == 0:
+   Line 103:         print("\n🎉 Static build successfully published to GitHub Pages!")
+------------------------------
+--- Around Line 101 ---
+   Line 98:     res = subprocess.run(["git", "push", "-f", "origin", "main:gh-pages"], cwd=temp_dir)
+   Line 99:     
+   Line 100:     # 5. Clean up temporary files
+-> Line 101:     shutil.rmtree(temp_dir)
+   Line 102:     if res.returncode == 0:
+   Line 103:         print("\n🎉 Static build successfully published to GitHub Pages!")
+   Line 104:         print("🔗 Live Link: https://0xselenicdove.github.io/pixo-clone/org-9cbd03fa/dashboard.html")
+------------------------------

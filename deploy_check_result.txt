@@ -1,0 +1,3 @@
+has_scraped_next: True
+has_images: False
+Length of script: 5544 chars

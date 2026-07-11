@@ -1,0 +1,5 @@
+2:import shutil
+14:        shutil.rmtree(temp_dir)
+23:            shutil.copytree(s, d)
+25:            shutil.copy2(s, d)
+101:    shutil.rmtree(temp_dir)
