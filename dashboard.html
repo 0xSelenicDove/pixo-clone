@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Dashboard | Pixo</title>
+  <link rel="stylesheet" href="/pixo-clone/scraped-next/static/chunks/593c515e612b2798.css"/>
+  <link rel="stylesheet" href="/pixo-clone/scraped-next/static/chunks/6cc694e41a377ca4.css"/>
+  <link rel="icon" href="/pixo-clone/icon@d266dcc34ef99e73" type="image/png" sizes="32x32"/>
+  <style>
+    body {
+      background-color: #ffffff;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-zinc-900 bg-white flex min-h-screen">
+
+  <!-- Left Sidebar (Clean matching thin layout) -->
+  <aside class="w-14 border-r border-zinc-200 bg-white flex flex-col items-center justify-between py-6 shrink-0 z-20">
+    <div class="flex flex-col items-center gap-6 w-full">
+      <!-- Sidebar Add Button -->
+      <button class="w-9 h-9 rounded-full bg-zinc-900 text-white flex items-center justify-center hover:bg-zinc-800 transition-colors shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </button>
+      
+      <!-- Nav Icons -->
+      <nav class="flex flex-col items-center gap-2.5 w-full">
+        <!-- Home (Active layout) -->
+        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center bg-zinc-100 text-zinc-900 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </a>
+        
+        <!-- Folder/Projects -->
+        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"></path></svg>
+        </a>
+        
+        <!-- Character/Assets -->
+        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 21a6 6 0 0 0-12 0"></path><circle cx="12" cy="10" r="4"></circle><path d="M12 2v2"></path></svg>
+        </a>
+        
+        <!-- Community -->
+        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </a>
+
+        <!-- Settings -->
+        <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Right/Main Area -->
+  <div class="flex-1 flex flex-col min-w-0">
+    <!-- Top Header -->
+    <header class="h-16 bg-white flex items-center justify-between px-8 shrink-0 z-10">
+      <!-- Logo in the Header left -->
+      <div class="flex items-center gap-2">
+        <a href="/"><img alt="Pixo" width="80" height="42" src="/pixo-clone/pixo-logo.svg"/></a>
+      </div>
+      
+      <!-- Right actions -->
+      <div class="flex items-center gap-3">
+        <!-- Language selector -->
+        <button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900 transition-colors">
+          <span class="text-base">🇺🇸</span>
+          <span class="font-medium text-xs">English</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        
+        <!-- Theme Toggle -->
+        <button class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </button>
+        
+        <!-- Discord -->
+        <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        </a>
+
+        <!-- WeChat (Overlapping Bubbles) -->
+        <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-400 hover:text-zinc-600 hover:bg-zinc-50 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 10c0-3.3-2.7-6-6-6s-6 2.7-6 6c0 1.7.7 3.2 1.8 4.3L6 17.5l2.8-.7c.8.4 1.7.6 2.7.6 3.3 0 6-2.7 6-6z" />
+            <path d="M19 14.5c.8-.8 1.3-1.9 1.3-3.1 0-2.4-1.9-4.4-4.3-4.4" />
+          </svg>
+        </a>
+
+        <!-- My Projects Dropdown -->
+        <button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-zinc-200 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 transition-colors">
+          <span>My Projects</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+        </button>
+        
+        <!-- Redeem -->
+        <button class="px-3 py-1.5 rounded-full border border-zinc-200 text-xs font-semibold text-zinc-700 hover:bg-zinc-50 transition-colors">
+          Redeem
+        </button>
+
+        <!-- Get Credits -->
+        <button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-zinc-950 text-white text-xs font-semibold hover:bg-zinc-800 transition-colors shadow-sm">
+          <span>Get Credits</span>
+          <div class="flex items-center gap-0.5 bg-zinc-850 text-lime-400 px-1.5 py-0.5 rounded-full text-[10px] font-bold font-mono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            200
+          </div>
+        </button>
+        
+        <!-- User Avatar -->
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-zinc-200 cursor-pointer">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Avatar" class="w-full h-full object-cover"/>
+        </div>
+      </div>
+    </header>
+
+    <!-- Scrollable Content -->
+    <main class="flex-1 overflow-y-auto px-12 py-10 space-y-12 bg-white">
+      <!-- Start Creating Card Section -->
+      <section class="max-w-4xl mx-auto text-center space-y-6 pt-4">
+        <h1 class="text-4xl font-bold tracking-tight text-zinc-900 leading-none">Start creating. Don't overthink it.</h1>
+        
+        <!-- Prompt Box -->
+        <div class="max-w-2xl mx-auto bg-white border border-zinc-250 rounded-2xl shadow-sm p-4 space-y-4 text-left">
+          <textarea class="w-full bg-transparent border-0 resize-none text-zinc-800 placeholder-zinc-400 focus:ring-0 focus:outline-none text-base h-16" placeholder="Describe the video you want to create...">A cinematic drone shot over a city at go</textarea>
+          
+          <div class="flex items-center justify-between border-t border-zinc-100 pt-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="bg-zinc-900 text-white px-2.5 py-0.5 rounded text-xs font-semibold">Agent</span>
+              <span class="text-zinc-400 text-xs px-1 hover:text-zinc-600 cursor-pointer">Model</span>
+              
+              <!-- Paperclip -->
+              <button class="text-zinc-400 hover:text-zinc-600 px-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></button>
+              
+              <!-- Dropdowns -->
+              <button class="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-zinc-200 text-xs font-medium text-zinc-500 hover:bg-zinc-50">
+                <span>Seedance2 Dir...</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <button class="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-zinc-200 text-xs font-medium text-zinc-500 hover:bg-zinc-50">
+                <span>16:9</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <button class="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-zinc-200 text-xs font-medium text-zinc-500 hover:bg-zinc-50">
+                <span>720p</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+              <button class="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-zinc-200 text-xs font-medium text-zinc-500 hover:bg-zinc-50">
+                <span>Auto</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+              </button>
+            </div>
+            
+            <!-- Submit button -->
+            <button class="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center hover:bg-zinc-800 transition-colors shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Creations -->
+      <section class="max-w-7xl mx-auto space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-base font-bold text-zinc-900">My Creations</h2>
+          <a href="#" class="text-xs font-medium text-zinc-400 hover:text-zinc-650 transition-colors inline-flex items-center gap-0.5">View all <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Plus Card -->
+          <div class="border-2 border-dashed border-zinc-200 hover:border-zinc-300 transition-colors rounded-2xl aspect-[16/10] bg-zinc-50 flex items-center justify-center cursor-pointer group">
+            <div class="w-8 h-8 rounded-full border border-zinc-200 text-zinc-400 group-hover:text-zinc-650 group-hover:border-zinc-300 flex items-center justify-center transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Gallery -->
+      <section class="max-w-7xl mx-auto space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-base font-bold text-zinc-900">Community Gallery</h2>
+          <a href="#" class="text-xs font-medium text-zinc-400 hover:text-zinc-650 transition-colors inline-flex items-center gap-0.5">View all <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          
+          <!-- Card 1: Partnership -->
+          <div class="bg-zinc-950 text-white rounded-2xl overflow-hidden aspect-[16/10] p-6 relative flex flex-col justify-between border border-zinc-800 custom-shadow cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <div class="flex items-center justify-between">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="13" y2="13"></line></svg>
+              <span class="bg-lime-500 text-black text-[9px] font-bold px-2 py-0.5 rounded-full tracking-wider">NEW</span>
+            </div>
+            <div class="space-y-1.5">
+              <h3 class="text-xl font-bold leading-tight">Pixo Creator Partnership Program</h3>
+              <p class="text-xs text-zinc-400 leading-relaxed">Apply for credits, exposure, and commercial opportunities</p>
+            </div>
+          </div>
+
+          <!-- Card 2: 大艺术家 -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&h=375&q=80" alt="大艺术家" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">03:28</span>
+              <h3 class="text-sm font-semibold">大艺术家</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Devancer2300
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 8</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 20</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: African Savannah Plain -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&h=375&q=80" alt="African Savannah Plain" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">01:31</span>
+              <h3 class="text-sm font-semibold">African Savannah Plain</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                柱国霸鸡
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 11</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 7</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Triple T adventures -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&h=375&q=80" alt="Triple T adventures" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">04:51</span>
+              <h3 class="text-sm font-semibold">Triple T adventures</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Larsson Ping
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 9</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Barnabys Friendly Habits -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&h=375&q=80" alt="Barnabys Friendly Habits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">02:57</span>
+              <h3 class="text-sm font-semibold">Barnabys Friendly Habits</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                JR Gendvil
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 27</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Flash of Vitality -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&h=375&q=80" alt="Flash of Vitality" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">01:10</span>
+              <h3 class="text-sm font-semibold">Flash of Vitality</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                凯文超有AI
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 8</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 15</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Cowboy Bebop and Boxing Kangaroo -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&h=375&q=80" alt="Cowboy Bebop and Boxing Kangaroo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">01:56</span>
+              <h3 class="text-sm font-semibold truncate">Cowboy Bebop and Boxing Kangaroo</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                陆放翁
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 16</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: The Scholarship -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&h=375&q=80" alt="The Scholarship" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">00:49</span>
+              <h3 class="text-sm font-semibold">The Scholarship</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Treasure Nonso
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 27</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 4</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: Car Scene (New, matching row 3) -->
+          <div class="bg-white rounded-2xl overflow-hidden aspect-[16/10] relative group custom-shadow border border-zinc-150 cursor-pointer hover:scale-[1.01] transition-transform duration-200">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&h=375&q=80" alt="Car driving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+              <span class="absolute top-3 left-3 bg-black/50 text-[10px] font-medium px-1.5 py-0.5 rounded font-mono">01:08</span>
+              <h3 class="text-sm font-semibold">City Cruise</h3>
+              <p class="text-[10px] text-white/70 inline-flex items-center gap-1 mt-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                PixoDirector
+              </p>
+              <div class="flex items-center gap-3 mt-1.5 text-[10px] text-white/80">
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg> 14</span>
+                <span class="inline-flex items-center gap-0.5"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 6</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/pixo-clone/local-interactivity.js"></script>
+</body>
+</html>
