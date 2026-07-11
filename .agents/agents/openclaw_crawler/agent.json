@@ -1,7 +1,7 @@
 {
   "name": "openclaw_crawler",
   "description": "Specialized subagent to run and manage the OpenClaw crawler pipeline, monitor scrapers, and execute HTML asset path patching.",
-  "hidden": true,
+  "hidden": false,
   "config": {
     "customAgent": {
       "systemPromptSections": [
