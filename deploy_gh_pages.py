@@ -24,6 +24,25 @@ def deploy():
         else:
             shutil.copy2(s, d)
             
+    # Also copy scraped-next, images, and videos to the build directory so they are published to gh-pages!
+    scraped_next_src = os.path.join(repo_path, "public/scraped-next")
+    scraped_next_dst = os.path.join(temp_dir, "scraped-next")
+    if os.path.exists(scraped_next_src):
+        shutil.copytree(scraped_next_src, scraped_next_dst, dirs_exist_ok=True)
+        print("Copied scraped-next assets successfully!")
+        
+    images_src = os.path.join(repo_path, "public/images")
+    images_dst = os.path.join(temp_dir, "images")
+    if os.path.exists(images_src):
+        shutil.copytree(images_src, images_dst, dirs_exist_ok=True)
+        print("Copied images successfully!")
+        
+    videos_src = os.path.join(repo_path, "public/videos")
+    videos_dst = os.path.join(temp_dir, "videos")
+    if os.path.exists(videos_src):
+        shutil.copytree(videos_src, videos_dst, dirs_exist_ok=True)
+        print("Copied videos successfully!")
+            
     # 3. Recursively replace paths in HTML, JS, CSS files for GitHub Pages subdirectory compatibility
     base_prefix = "/pixo-clone"
     replacements = [

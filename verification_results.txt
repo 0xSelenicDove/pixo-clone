@@ -1,0 +1,4 @@
+scraped_next_css exists: True
+Size of css: 301284 bytes
+projects_html exists: True
+Size of projects.html: 44760 bytes
